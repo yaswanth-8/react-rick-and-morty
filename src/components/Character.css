@@ -1,0 +1,23 @@
+button {
+  background: none;
+  border: none;
+  font-size: 50px;
+  padding: 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.buttons {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+h1 {
+  color: aliceblue;
+  -webkit-text-stroke: 1.5px black;
+}

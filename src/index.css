@@ -8,6 +8,7 @@ body {
   background: url("https://wallpapercave.com/wp/wp6360955.jpg");
   background-size: cover;
   background-attachment: fixed;
+  padding: 20px;
 }
 
 code {
