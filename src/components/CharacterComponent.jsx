@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import "./Character.css";
-import IndividualComponent from "./CharacterComponent/IndividualComponent";
+import IndividualComponent from "./IndividualComponent/IndividualComponent";
 
 function CharacterComponent() {
   const [page, setPage] = useState(1);
