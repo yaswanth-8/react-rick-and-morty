@@ -1,48 +1,28 @@
-import React, { useState, useEffect } from "react";
-import "./Character.css";
+import React from "react";
+import { useQuery } from "react-query";
+import IndividualComponent from "./CharacterComponent/IndividualComponent";
 
 function CharacterComponent() {
-  const [characters, setCharacters] = useState(null);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const fetchData = async () => {
-    try {
-      const response = await fetch("https://rickandmortyapi.com/api/character");
-      const data = await response.json();
-      setCharacters(data.results);
-      console.log(data.results);
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await fetch("https://rickandmortyapi.com/api/character");
+    const data = await response.json();
+    return data.results;
   };
+  const { data: characters, status } = useQuery("myData", fetchData);
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "error") {
+    return <p>Loading</p>;
+  }
 
   return (
     <div>
-      {/* Render the characters data here */}
       {characters &&
         characters.map((character) => (
-          <div key={character.id} className="card">
-            <img src={character.image} />
-            <div className="details">
-              <p>
-                Name: {character.name}
-                <br />
-                Status: {character.status}{" "}
-                {character.status === "Dead" ? (
-                  <span>🔴</span>
-                ) : (
-                  <span>🟢</span>
-                )}
-                <br />
-                Gender: {character.gender}
-                <br />
-                Species: {character.species}
-              </p>
-            </div>
-          </div>
+          <IndividualComponent key={character.id} character={character} />
         ))}
     </div>
   );

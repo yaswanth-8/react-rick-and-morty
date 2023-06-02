@@ -1,0 +1,30 @@
+img {
+  height: auto;
+  border-radius: 20px;
+}
+
+span {
+  position: relative;
+  bottom: 2px;
+  font-size: 6px;
+}
+
+.details {
+  font-size: small;
+  text-align: left;
+  padding: 0 10px;
+  color: aliceblue;
+  line-height: 16px;
+}
+
+.card {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: inline-flex;
+  height: 100px;
+  width: 300px;
+  margin: 20px;
+  background-color: rgba(1, 36, 19, 0.767);
+  padding: 10px;
+  border-radius: 20px;
+}
